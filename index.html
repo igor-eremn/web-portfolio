@@ -6,19 +6,20 @@
     <title>Test HTML File</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <header id="head">
-        <h1>Website Header</h1>
-        <nav>
-            <ul>
+<body id="body">
+    <nav id="navbar" class="navbar">
+        <div class="logo">Igor Eremin</div>
+    
+        <ul class="nav-links">
+            <div class="menu">
                 <li><a href="#about">About Me</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+            </div>
+        </ul>
+    </nav>
 
     <main>
         <hr>
@@ -46,6 +47,7 @@
             <h2 class="section-header">Contact</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </section>
+        <hr>
     </main>
 
     <footer>
@@ -53,17 +55,17 @@
     </footer>
     
     <script>
-        //scrolling to proper section from navigation Menu
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
 
                 const targetId = this.getAttribute('href').substring(1);
                 const targetElement = document.getElementById(targetId);
+                const navbarHeight = document.getElementById('navbar').offsetHeight + 23;
 
                 if (targetElement) {
                     window.scrollTo({
-                        top: targetElement.offsetTop,
+                        top: targetElement.offsetTop - navbarHeight, // Subtract navbar height
                         behavior: 'smooth'
                     });
                 }
@@ -73,11 +75,25 @@
         //scrolling to top of the screen on reload
         document.addEventListener('DOMContentLoaded', function() {
             const targetElement = document.getElementById("head");
+            const nav_bar = document.getElementById("navbar");
             window.scrollTo({
                         top: targetElement,
                         behavior: 'smooth'
                     });
         }, false);
+
+        window.onscroll = function() {myFunction()};
+
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+
+        function myFunction() {
+        if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky")
+        } else {
+            navbar.classList.remove("sticky");
+        }
+        }
     </script>
 </body>
 </html>

@@ -5,6 +5,9 @@ body {
     margin: 0;
     padding: 0;
 }
+main {
+    padding-top: 0px;
+}
 h1 {
     color: #007bff;
 }
@@ -13,9 +16,9 @@ p {
 }
 hr {
     border: 0;
-    height: 2px; /* Adjust height as needed */
+    height: 3px; /* Adjust height as needed */
     background-color: #000000; /* Line color */
-    margin: 20px 0; /* Adjust margin for spacing */
+    margin: 0px 0; /* Adjust margin for spacing */
 }
 .nav-section {
     height: 1000px;
@@ -23,4 +26,46 @@ hr {
 .section-header {
     text-align: center;
     margin-bottom: 10px; /* Adjust as needed */
+}
+
+/*NAVIGATIONAL BAR*/
+.navbar {
+    position: sticky;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: teal;
+    color: #fff;
+    top: 0;
+    z-index: 1000;
+}
+.nav-links a {
+    color: #fff;
+}
+.logo {
+    margin-left: 30px;
+    font-size: 50px;
+    font-weight: bold;
+}
+.menu {
+    display: flex;
+    gap: 1em;
+    font-size: 25px;
+    list-style: none;
+    padding: 0;
+}
+.menu li {
+    padding: 5px 5px;
+}
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+}
+.menu li a:hover {
+    background-color: #4c9e9e;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
