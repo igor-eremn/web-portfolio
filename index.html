@@ -7,7 +7,77 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hello, World!</h1>
-    <p>This is a test HTML file.</p>
+    <header id="head">
+        <h1>Website Header</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <hr>
+        <section id="about" class="nav-section">
+            <h2 class="section-header">About Me</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </section>
+        <hr>
+        <section id="experience" class="nav-section">
+            <h2 class="section-header">Experience</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </section>
+        <hr>
+        <section id="projects" class="nav-section">
+            <h2 class="section-header">Projects</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </section>
+        <hr>
+        <section id="skills" class="nav-section">
+            <h2 class="section-header">Skills</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </section>
+        <hr>
+        <section id="contact" class="nav-section">
+            <h2 class="section-header">Contact</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Your Website. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        //scrolling to proper section from navigation Menu
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        //scrolling to top of the screen on reload
+        document.addEventListener('DOMContentLoaded', function() {
+            const targetElement = document.getElementById("head");
+            window.scrollTo({
+                        top: targetElement,
+                        behavior: 'smooth'
+                    });
+        }, false);
+    </script>
 </body>
 </html>

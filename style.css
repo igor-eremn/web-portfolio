@@ -5,11 +5,22 @@ body {
     margin: 0;
     padding: 0;
 }
-
 h1 {
     color: #007bff;
 }
-
 p {
     font-size: 1.2em;
+}
+hr {
+    border: 0;
+    height: 2px; /* Adjust height as needed */
+    background-color: #000000; /* Line color */
+    margin: 20px 0; /* Adjust margin for spacing */
+}
+.nav-section {
+    height: 1000px;
+}
+.section-header {
+    text-align: center;
+    margin-bottom: 10px; /* Adjust as needed */
 }
