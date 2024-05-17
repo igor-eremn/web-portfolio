@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
+    background-color: #24201f;
+    color: #fff;
     margin: 0;
     padding: 0;
 }
@@ -17,55 +17,137 @@ p {
 hr {
     border: 0;
     height: 3px; /* Adjust height as needed */
-    background-color: #000000; /* Line color */
+    /*background-color: #ffffff; /* Line color */
     margin: 0px 0; /* Adjust margin for spacing */
 }
 .nav-section {
-    height: 1000px;
+    height: 600px;
+    padding: 20px;
 }
 .section-header {
     text-align: center;
     margin-bottom: 10px; /* Adjust as needed */
 }
+.section-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px; /* Adjust the gap as needed */
+}
 
-/*NAVIGATIONAL BAR*/
+.left-content {
+    flex: 4;
+    height: 300px; /* Example height, adjust as needed */
+    background-color: #24201f; /* Same as the page background */
+    border-radius: 10px;
+    box-shadow: none; /* Remove the shadow */
+    margin-top: 100px;
+    border: 1px solid #fff; /* Adjust the border as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-content a {
+    margin: 10px 0; /* Space out the links */
+    color: #a093e6;
+    text-decoration: none;
+}
+
+.right-content {
+    flex: 5; /* Make the right section larger */
+    height: 500px; /* Example height, adjust as needed */
+    background-color: #24201f; /* Same as the page background */
+    border-radius: 10px;
+    box-shadow: none; /* Remove the shadow */
+    margin-top: 50px;
+    border: 1px solid #fff; /* Adjust the border as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Image Carousel*/
+.w3-content {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    scale: 0.7;
+    height: auto;
+    overflow: hidden;
+}
+
+.mySlides {
+    display: block;
+    width: 100%; /* Ensure images fit within the container */
+    height: auto;
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+.active {
+    display: block;
+}
+#photo{
+    border-radius: 100%;
+}
+
+
+/* NAVIGATIONAL BAR */
 .navbar {
     position: sticky;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-    background-color: teal;
-    color: #fff;
     top: 0;
     z-index: 1000;
-}
-.nav-links a {
+    display: flex;
+    width: 800px;
+    height: 60px; /* Set a consistent height for the navbar */
+    margin: 0 auto; /* Center the navbar */
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background-color: #24201f;
     color: #fff;
+    border-radius: 50px; /* Make the corners rounded */
+    border: 1px solid #fff;
 }
-.logo {
-    margin-left: 30px;
-    font-size: 50px;
-    font-weight: bold;
+
+.nav-links {
+    display: flex;
+    width: 100%; /* Ensure the nav-links container takes up full width */
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
+
 .menu {
     display: flex;
-    gap: 1em;
-    font-size: 25px;
+    width: 100%; /* Ensure the menu takes up full width */
     list-style: none;
     padding: 0;
+    margin: 0; /* Remove default margins */
 }
+
 .menu li {
-    padding: 5px 5px;
+    flex: 1; /* Ensure all menu items take up equal space */
+    height: 100%; /* Match the height of the navbar */
 }
+
 .menu li a {
     color: #fff;
     text-decoration: none;
-    display: block;
-    padding: 10px;
+    display: flex; /* Use flexbox for centering text */
+    align-items: center; /* Vertically center text */
+    justify-content: center; /* Horizontally center text */
+    height: 100%; /* Ensure link takes up full height of li */
+    width: 100%; /* Ensure link takes up full width of li */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    box-sizing: border-box; /* Include padding and border in total width and height */
 }
+
 .menu li a:hover {
-    background-color: #4c9e9e;
-    border-radius: 5px;
+    background-color: #454241;
+    border-radius: 50px; /* Match the border radius of the navbar */
     transition: background-color 0.3s ease;
 }
+
