@@ -35,7 +35,7 @@ hr {
 }
 
 .left-content {
-    flex: 4;
+    flex: 1;
     height: 300px; /* Example height, adjust as needed */
     background-color: #24201f; /* Same as the page background */
     border-radius: 10px;
@@ -55,7 +55,7 @@ hr {
 }
 
 .right-content {
-    flex: 5; /* Make the right section larger */
+    flex: 4; /* Make the right section larger */
     height: 500px; /* Example height, adjust as needed */
     background-color: #24201f; /* Same as the page background */
     border-radius: 10px;
