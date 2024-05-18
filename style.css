@@ -5,91 +5,117 @@ body {
     margin: 0;
     padding: 0;
 }
+
 main {
     padding-top: 0px;
 }
+
 h1 {
     color: #007bff;
 }
+
 p {
     font-size: 1.2em;
 }
+
+.divider {
+    border: 0;
+    height: 3px; /* Adjust height as needed */
+    background-color: #ffffff; /* Line color */
+    margin: 0; /* Adjust margin for spacing */
+    position: absolute;
+    width: 100%; /* Make it span the full width of the page */
+    top: 50%; /* Position it in the middle of the screen */
+    left: 0;
+    z-index: 1;
+}
+
 hr {
     border: 0;
     height: 3px; /* Adjust height as needed */
     /*background-color: #ffffff; /* Line color */
     margin: 0px 0; /* Adjust margin for spacing */
 }
+
 .nav-section {
+    position: relative;
     height: 600px;
     padding: 20px;
 }
-.section-header {
-    text-align: center;
-    margin-bottom: 10px; /* Adjust as needed */
-}
+
 .section-container {
     display: flex;
-    justify-content: space-between;
-    gap: 5px; /* Adjust the gap as needed */
-}
-
-.left-content {
-    flex: 1;
-    height: 300px; /* Example height, adjust as needed */
-    background-color: #24201f; /* Same as the page background */
-    border-radius: 10px;
-    box-shadow: none; /* Remove the shadow */
-    margin-top: 100px;
-    border: 1px solid #fff; /* Adjust the border as needed */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.left-content a {
-    margin: 10px 0; /* Space out the links */
-    color: #a093e6;
-    text-decoration: none;
-}
-
-.right-content {
-    flex: 4; /* Make the right section larger */
-    height: 500px; /* Example height, adjust as needed */
-    background-color: #24201f; /* Same as the page background */
-    border-radius: 10px;
-    box-shadow: none; /* Remove the shadow */
-    margin-top: 50px;
-    border: 1px solid #fff; /* Adjust the border as needed */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/*Image Carousel*/
-.w3-content {
+    justify-content: space-between; /* Distribute space evenly */
+    height: 100%;
+    align-items: center; /* Center align items vertically */
     position: relative;
-    width: 100%;
-    max-width: 500px;
-    scale: 0.7;
-    height: auto;
-    overflow: hidden;
+    z-index: 2; /* Make sure it is above the divider */
 }
 
-.mySlides {
-    display: block;
-    width: 100%; /* Ensure images fit within the container */
-    height: auto;
-    object-fit: cover; /* Maintain aspect ratio and cover the container */
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    z-index: 3; /* Ensure the image is above the divider */
+    /*border: 3px solid #fff;*/
+    margin-right: 30%; /* Adjust margin to move it to the left */
+}
+.image-container img {
+    border-radius: 50%;
+    width: 400px; /* Adjust size as needed */
+    height: 400px; /* Adjust size as needed */
+    object-fit: cover;
+    border: 3px solid #fff;
 }
 
-.active {
-    display: block;
+#home-content {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    height: 100%;
+    position: relative;
+    z-index: 3; /* Ensure the content is above the divider */
+    /*border: 3px solid #fff;*/
+    margin-left: 30%; /* Adjust margin to move it to the right */
 }
-#photo{
-    border-radius: 100%;
+
+#name-container,
+#links-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    z-index: 3;
+    /*border: 3px solid #fff;*/
 }
+
+#home-name {
+    color: #fff;
+    font-size: 2.3em;
+    margin-top:100%;
+}
+
+#links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom:100%;
+}
+
+#links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+#links a:hover {
+    text-decoration: underline;
+}
+
+
+
+
 
 
 /* NAVIGATIONAL BAR */
