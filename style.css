@@ -5,15 +5,12 @@ body {
     margin: 0;
     padding: 0;
 }
-
 main {
     padding-top: 0px;
 }
-
 h1 {
     color: #007bff;
 }
-
 p {
     font-size: 1.2em;
 }
@@ -113,8 +110,6 @@ hr {
     text-decoration: underline;
 }
 
-
-
 /* ABOUT SECTION */
 .section-container-about {
     display: flex;
@@ -157,7 +152,44 @@ hr {
     font-family: monospace;
 }
 
-
+/* EXPERIENCE SECTION */
+.section-container-experience {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    height: 100%;
+    /*border: 1px solid #fff;*/
+}
+.left-content-experience, .right-content-experience {
+    padding: 20px;
+    border-radius: 10px;
+    display: flex; /* Added display flex to center content */
+    align-items: center;
+    justify-content: center;
+}
+.left-content-experience {
+    margin-left: 5%;
+    height: 50%;
+    width: 20%;
+    display: flex; /* Ensure flexbox is applied */
+    align-items: center; /* Vertically center content */
+    justify-content: flex-end; /* Align content to the right */
+    font-family: monospace;
+    font-size: 2em;
+}
+.right-content-experience {
+    margin-right: 5%;
+    height: auto; /* Remove fixed height to allow content to adjust dynamically */
+    width: 80%;
+    display: flex;
+    flex-direction: column; /* Arrange text blocks vertically */
+    justify-content: space-evenly; /* Ensure even spacing */
+}
+.right-content-experience p{
+    font-size: 1.4em;
+    font-family: monospace;
+}
 
 /* NAVIGATIONAL BAR */
 .navbar {
