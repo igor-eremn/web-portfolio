@@ -66,7 +66,6 @@
             </div>
         </section>
         <hr>
-        <hr>
         <section id="skills" class="nav-section">
             <div class="section-container-skills">
                 <div class="left-content-skills">
@@ -140,6 +139,7 @@
                 </div>
             </div>
         </section>
+        <hr>
         <section id="experience" class="nav-section">
             <div class="section-container-experience">
                 <div class="left-content-experience">
@@ -171,11 +171,17 @@
                 </div>
             </div>
         </section>
-        <!--<hr>
+        <hr>
         <section id="projects" class="nav-section">
-            <h2 class="section-header">Projects</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </section>-->
+            <div class="section-container-projects">
+                <div class="left-content-projects">
+                    <h2 id="projects-header">Projects</h2>
+                </div>
+                <div class="left-content-projects">
+                    
+                </div>
+            </div>
+        </section>
         <hr>
     </main>
 
@@ -217,12 +223,15 @@
             const aboutSection = document.querySelector("#about");
             const experienceSection = document.querySelector("#experience");
             const skillsSection = document.querySelector("#skills");
+            const projectsSection = document.querySelector("#projects");
             const leftContentAbout = document.querySelector(".left-content-about");
             const rightContentAbout = document.querySelector(".right-content-about");
             const leftContentExperience = document.querySelector(".left-content-experience");
             const rightContentExperience = document.querySelector(".right-content-experience");
             const leftContentSkills = document.querySelector(".left-content-skills");
             const rightContentSkills = document.querySelector(".right-content-skills");
+            const leftContentProjects = document.querySelector(".left-content-projects");
+            const rightContentProjects = document.querySelector(".right-content-projects");
 
             let skillsAnimationStarted = false; // Flag to track if skills animation has started
 
@@ -256,6 +265,7 @@
             createObserver(aboutSection, leftContentAbout, rightContentAbout);
             createObserver(experienceSection, leftContentExperience, rightContentExperience);
             createObserver(skillsSection, leftContentSkills, rightContentSkills, animateBars);
+            createObserver(projectsSection, leftContentProjects, rightContentProjects);
 
             // Function to animate bars
             function animateBars() {
