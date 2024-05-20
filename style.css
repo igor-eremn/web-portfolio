@@ -38,8 +38,7 @@ hr {
     border-top: 3px dashed #c3c3c3; /* Make the border dashed with white color */
 }
 
-
-
+/* HOME SECTION */
 .section-container {
     display: flex;
     justify-content: space-between; /* Distribute space evenly */
@@ -48,8 +47,6 @@ hr {
     position: relative;
     z-index: 2; /* Make sure it is above the divider */
 }
-
-/* HOME SECTION */
 .image-container {
     display: flex;
     justify-content: flex-start;
@@ -233,13 +230,187 @@ hr {
     font-size: 15px;
 }
 
+/* SKILLS */
+.section-container-skills {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    height: 100%;
+    overflow: hidden; /* Ensure hidden overflow for sliding effect */
+    /*border: 1px solid #fff; /*border*/
+}
+.left-content-skills, .right-content-skills {
+    padding: 20px;
+    border-radius: 10px;
+    display: flex; /* Added display flex to center content */
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* Initially hidden */
+    transform: translateX(-100%); /* Start off-screen to the left */
+    transition: transform 1s ease, opacity 1s ease;
+    /*border: 1px solid #fff;*/
+}
+.left-content-skills {
+    margin-left: 5%;
+    height: 50%;
+    width: 20%;
+    display: flex; /* Ensure flexbox is applied */
+    align-items: center; /* Vertically center content */
+    justify-content: flex-end; /* Align content to the right */
+    font-family: monospace;
+    font-size: 2em;
+}
+.right-content-skills {
+    transform: translateX(100%); /* Start off-screen to the right */
+    margin-right: 5%;
+    height: 80%;
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly; /* Ensure even spacing */
+    gap: 20px; /* Gap between columns */
+}
+.skills-column {
+    width: 45%; /* Adjust width to fit two columns */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Gap between skills */
+}
+.skill {
+    display: flex;
+    flex-direction: column;
+}
+.skill-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 5px; /* Space between skill name and progress bar */
+}
+.progress {
+    width: 100%;
+    padding: 6px;
+    border-radius: 30px;
+    background: rgba(0, 0, 0, 0.25);  
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+}
+.progress-bar {
+    height: 18px;
+    border-radius: 30px;
+    background-image: 
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+    transition: 0.4s linear;  
+    transition-property: width, background-color;    
+}
+#bar1.progress-bar {
+    width: 80%; 
+    background-color: #a1a1a1;  
+    animation: progressAnimation1 5s;
+    animation-play-state: paused;
+}/*JavaScript   -   80%*/
+#bar2.progress-bar {
+    width: 90%; 
+    background-color: #a1a1a1;  
+    animation: progressAnimation2 5s;
+    animation-play-state: paused;
+}/*Java         -   90%*/
+#bar3.progress-bar {
+    width: 85%; 
+    background-color: #a1a1a1;  
+    animation: progressAnimation3 5s;
+    animation-play-state: paused;
+}/*HTML         -   85%*/
+#bar4.progress-bar {
+    width: 70%; 
+    background-color: #a1a1a1;  
+    animation: progressAnimation4 5s;
+    animation-play-state: paused;
+}/*CSS          -   70%*/
+#bar5.progress-bar {
+    width: 65%; 
+    background-color: #a1a1a1;  
+    animation: progressAnimation5 5s;
+    animation-play-state: paused;
+}/*C#           -   65%*/
+#bar6.progress-bar {
+    width: 90%; 
+    background-color: #a1a1a1;  
+    animation: progressAnimation6 5s;
+    animation-play-state: paused;
+}/*SQL          -   90%*/
+#bar7.progress-bar {
+    width: 80%; 
+    background-color: #a1a1a1;  
+    animation: progressAnimation7 5s;
+    animation-play-state: paused;
+}/*MongoDB      -   80%*/
+#bar8.progress-bar {
+    width: 70%; 
+    background-color: #a1a1a1;  
+    animation: progressAnimation8 5s;
+    animation-play-state: paused;
+}/*PHP          -   70%*/
+#bar9.progress-bar {
+    width: 60%; 
+    background-color: #a1a1a1;  
+    animation: progressAnimation9 5s;
+    animation-play-state: paused;
+}/*Python       -   60%*/
+#bar10.progress-bar {
+    width: 60%; 
+    background-color: #a1a1a1;  
+    animation: progressAnimation10 5s;
+    animation-play-state: paused;
+}/*C            -   60%*/
+
+/* Additional keyframes for different animations */
+@keyframes progressAnimation1 {
+    0%   { width: 5%; background-color: #000;}
+    100% { width: 80%; background-color: #a1a1a1; }
+}
+@keyframes progressAnimation2 {
+    0%   { width: 5%; background-color: #000;}
+    100% { width: 90%; background-color: #a1a1a1; }
+}
+@keyframes progressAnimation3 {
+    0%   { width: 5%; background-color: #000;}
+    100% { width: 85%; background-color: #a1a1a1; }
+}
+@keyframes progressAnimation4 {
+    0%   { width: 5%; background-color: #000;}
+    100% { width: 70%; background-color: #a1a1a1; }
+}
+@keyframes progressAnimation5 {
+    0%   { width: 5%; background-color: #000;}
+    100% { width: 65%; background-color: #a1a1a1; }
+}
+@keyframes progressAnimation6 {
+    0%   { width: 5%; background-color: #000;}
+    100% { width: 90%; background-color: #a1a1a1; }
+}
+@keyframes progressAnimation7 {
+    0%   { width: 5%; background-color: #000;}
+    100% { width: 80%; background-color: #a1a1a1; }
+}
+@keyframes progressAnimation8 {
+    0%   { width: 5%; background-color: #000;}
+    100% { width: 70%; background-color: #a1a1a1; }
+}
+@keyframes progressAnimation9 {
+    0%   { width: 5%; background-color: #000;}
+    100% { width: 60%; background-color: #a1a1a1; }
+}
+@keyframes progressAnimation10 {
+    0%   { width: 5%; background-color: #000;}
+    100% { width: 60%; background-color: #a1a1a1; }
+}
+
+
+
 /* Animation classes */
 .slide-in {
     opacity: 1;
     transform: translateX(0);
 }
-
-
 
 /* NAVIGATIONAL BAR */
 .navbar {

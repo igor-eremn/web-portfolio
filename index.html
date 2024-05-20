@@ -12,9 +12,9 @@
             <div class="menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Me</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
             </div>
         </ul>
     </nav>
@@ -66,6 +66,80 @@
             </div>
         </section>
         <hr>
+        <hr>
+        <section id="skills" class="nav-section">
+            <div class="section-container-skills">
+                <div class="left-content-skills">
+                    <h2 id="skills-header">Skills</h2>
+                </div>
+                <div class="right-content-skills">
+                    <div class="skills-column">
+                        <div class="skill">
+                            <div class="skill-name">JavaScript</div>
+                            <div class="progress progress-moved">
+                                <div class="progress-bar" id="bar1"></div>                       
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">HTML</div>
+                            <div class="progress progress-moved">
+                                <div class="progress-bar" id="bar3"></div>                       
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">CSS</div>
+                            <div class="progress progress-moved">
+                                <div class="progress-bar" id="bar4"></div>                       
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">Java</div>
+                            <div class="progress progress-moved">
+                                <div class="progress-bar" id="bar2"></div>                       
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">C#</div>
+                            <div class="progress progress-moved">
+                                <div class="progress-bar" id="bar5"></div>                       
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skills-column">
+                        <div class="skill">
+                            <div class="skill-name">SQL</div>
+                            <div class="progress progress-moved">
+                                <div class="progress-bar" id="bar6"></div>                       
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">Python</div>
+                            <div class="progress progress-moved">
+                                <div class="progress-bar" id="bar9"></div>                       
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">MongoDB</div>
+                            <div class="progress progress-moved">
+                                <div class="progress-bar" id="bar7"></div>                       
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">PHP</div>
+                            <div class="progress progress-moved">
+                                <div class="progress-bar" id="bar8"></div>                       
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">C</div>
+                            <div class="progress progress-moved">
+                                <div class="progress-bar" id="bar10"></div>                       
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section id="experience" class="nav-section">
             <div class="section-container-experience">
                 <div class="left-content-experience">
@@ -97,17 +171,11 @@
                 </div>
             </div>
         </section>
-        
-        <hr>
+        <!--<hr>
         <section id="projects" class="nav-section">
             <h2 class="section-header">Projects</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </section>
-        <hr>
-        <section id="skills" class="nav-section">
-            <h2 class="section-header">Skills</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </section>
+        </section>-->
         <hr>
     </main>
 
@@ -144,20 +212,25 @@
                     });
         }, false);
 
-        //sliding on scroll
+        // Sliding on scroll
         document.addEventListener("DOMContentLoaded", function() {
             const aboutSection = document.querySelector("#about");
             const experienceSection = document.querySelector("#experience");
+            const skillsSection = document.querySelector("#skills");
             const leftContentAbout = document.querySelector(".left-content-about");
             const rightContentAbout = document.querySelector(".right-content-about");
             const leftContentExperience = document.querySelector(".left-content-experience");
             const rightContentExperience = document.querySelector(".right-content-experience");
+            const leftContentSkills = document.querySelector(".left-content-skills");
+            const rightContentSkills = document.querySelector(".right-content-skills");
 
-            function createObserver(section, leftContent, rightContent) {
+            let skillsAnimationStarted = false; // Flag to track if skills animation has started
+
+            function createObserver(section, leftContent, rightContent, animationCallback) {
                 const observerOptions = {
                     root: null,
                     rootMargin: '0px',
-                    threshold: 0.5  // Adjust this value to determine how much of the section should be visible
+                    threshold: 0.5
                 };
 
                 const observer = new IntersectionObserver((entries, observer) => {
@@ -165,7 +238,13 @@
                         if (entry.isIntersecting) {
                             leftContent.classList.add("slide-in");
                             rightContent.classList.add("slide-in");
-                            observer.unobserve(entry.target);  // Unobserve after animation to prevent retriggering
+                            observer.unobserve(entry.target);
+
+                            // Call the animation callback if provided and not already started
+                            if (animationCallback && !skillsAnimationStarted) {
+                                animationCallback();
+                                skillsAnimationStarted = true; // Set flag to true once animation starts
+                            }
                         }
                     });
                 }, observerOptions);
@@ -173,9 +252,20 @@
                 observer.observe(section);
             }
 
+            // Use the createObserver function for each section
             createObserver(aboutSection, leftContentAbout, rightContentAbout);
             createObserver(experienceSection, leftContentExperience, rightContentExperience);
+            createObserver(skillsSection, leftContentSkills, rightContentSkills, animateBars);
+
+            // Function to animate bars
+            function animateBars() {
+                const progressBars = document.querySelectorAll(".progress-bar");
+                progressBars.forEach(bar => {
+                    bar.style.animationPlayState = 'running';
+                });
+            }
         });
+
     </script>
 </body>
 </html>
