@@ -25,17 +25,21 @@ hr {
     height: 600px;
     padding: 20px;
 }
-.divider {
+.divider{
     border: 0;
     height: 3px; /* Adjust height as needed */
-    background-color: #ffffff; /* Line color */
+    background-color: transparent; /* Set background color to transparent */
     margin: 0; /* Adjust margin for spacing */
     position: absolute;
     width: 100%; /* Make it span the full width of the page */
     top: 50%; /* Position it in the middle of the screen */
     left: 0;
     z-index: 1;
+    border-top: 3px dashed #c3c3c3; /* Make the border dashed with white color */
 }
+
+
+
 .section-container {
     display: flex;
     justify-content: space-between; /* Distribute space evenly */
@@ -61,7 +65,7 @@ hr {
     width: 400px; /* Adjust size as needed */
     height: 400px; /* Adjust size as needed */
     object-fit: cover;
-    border: 3px solid #fff;
+    border: 3px dashed #fff;
 }
 #home-content {
     display: flex;
@@ -164,7 +168,7 @@ hr {
     gap: 10px;
     height: 100%;
     overflow: hidden; /* Ensure hidden overflow for sliding effect */
-    /*border: 1px solid #fff;*/
+    /*border: 1px solid #fff; /*border*/
 }
 .left-content-experience, .right-content-experience{
     padding: 20px;
@@ -175,6 +179,7 @@ hr {
     opacity: 0; /* Initially hidden */
     transform: translateX(-100%); /* Start off-screen to the left */
     transition: transform 1s ease, opacity 1s ease;
+    /*border: 1px solid #fff;*/
 }
 .right-content-experience {
     transform: translateX(100%); /* Start off-screen to the right */
@@ -191,15 +196,41 @@ hr {
 }
 .right-content-experience {
     margin-right: 5%;
-    height: auto; /* Remove fixed height to allow content to adjust dynamically */
+    height: 80%;
     width: 80%;
     display: flex;
     flex-direction: column; /* Arrange text blocks vertically */
     justify-content: space-evenly; /* Ensure even spacing */
 }
-.right-content-experience p {
-    font-size: 1.4em;
+.right-content-experience table {
+    border-collapse: collapse;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+.right-content-experience th, .right-content-experience td {
+    border-bottom: 1px solid #ddd; /* Apply only horizontal borders */
+    padding: 12px 20px;
+    text-align: left;
     font-family: monospace;
+}
+.right-content-experience th {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: left;
+    padding: 3px 20px; /* Reduced padding for header cells to decrease height */
+    border-bottom: 2px solid #ddd; /* Stronger border for header */
+}
+.right-content-experience td:nth-child(1) {
+    font-size: 25px;
+    font-weight: bold;
+}
+.right-content-experience td:nth-child(2) {
+    font-size: 20px;
+    width: 30%;
+}
+.right-content-experience td:nth-child(3) {
+    font-size: 15px;
 }
 
 /* Animation classes */
