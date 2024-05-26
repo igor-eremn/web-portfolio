@@ -55,7 +55,7 @@ hr {
     position: relative;
     z-index: 3; /* Ensure the image is above the divider */
     /*border: 3px solid #fff;*/
-    width: 55%;
+    width: 60%;
 }
 .image-container img {
     border-radius: 50%;
@@ -71,7 +71,7 @@ hr {
     position: relative;
     z-index: 3; /* Ensure the content is above the divider */
     /*border: 3px solid #fff;*/
-    width: 45%;
+    width: 40%;
 }
 #name-container, #links-container {
     display: flex;
@@ -406,6 +406,11 @@ hr {
 }
 
 /* PROJECTS */
+.nav-section-projects {
+    position: relative;
+    height: 900px;
+    padding: 20px;
+}
 .section-container-projects {
     display: flex;
     justify-content: space-between;
@@ -415,10 +420,10 @@ hr {
     overflow: hidden; /* Ensure hidden overflow for sliding effect */
     /*border: 1px solid #fff; /*border*/
 }
-.left-content-projects, .right-content-projects{
+.left-content-projects, .right-content-projects {
     padding: 20px;
     border-radius: 10px;
-    display: flex; /* Added display flex to center content */
+    display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0; /* Initially hidden */
@@ -428,6 +433,13 @@ hr {
 }
 .right-content-projects {
     transform: translateX(100%); /* Start off-screen to the right */
+    margin-right: 5%;
+    height: 80%;
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    /*border: 1px solid #fff;*/
 }
 .left-content-projects {
     margin-left: 5%;
@@ -439,13 +451,111 @@ hr {
     font-family: monospace;
     font-size: 2em;
 }
-.right-content-projects {
+.project-card {
+    width: 100%;
+    padding-top: 70%; /* Aspect ratio of 1:1 for square shape */
+    position: relative; /* Needed for the description overlay */
+    background-color: #24201f; /* Card background color */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Hide overflowing description */
+}
+.project-card-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0;
+}
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.project-description {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 10px;
+    font-family: monospace;
+}
+.project-name {
+    font-size: 1.6em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.project-description p {
+    font-size: 1.1em;
+}
+.project-card:hover .project-description {
+    opacity: 1;
+}
+.project-card:hover {
+    transform: translateY(-10px); /* Slight lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Reference */
+.section-container-reference {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    height: 100%;
+    overflow: hidden; /* Ensure hidden overflow for sliding effect */
+    /*border: 1px solid #fff; /*border*/
+}
+.left-content-reference, .right-content-reference{
+    padding: 20px;
+    border-radius: 10px;
+    display: flex; /* Added display flex to center content */
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* Initially hidden */
+    transform: translateX(-100%); /* Start off-screen to the left */
+    transition: transform 1s ease, opacity 1s ease;
+    border: 1px solid #fff;
+}
+.right-content-reference {
+    transform: translateX(100%); /* Start off-screen to the right */
+}
+.left-content-reference {
+    margin-left: 5%;
+    height: 50%;
+    width: 20%;
+    display: flex; /* Ensure flexbox is applied */
+    align-items: center; /* Vertically center content */
+    justify-content: flex-end; /* Align content to the right */
+    font-family: monospace;
+    font-size: 2em;
+}
+.right-content-reference {
     margin-right: 5%;
     height: 80%;
     width: 80%;
     display: flex;
     flex-direction: column; /* Arrange text blocks vertically */
     justify-content: space-evenly; /* Ensure even spacing */
+    border: 1px solid #fff;
 }
 
 /* Animation classes */

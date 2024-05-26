@@ -172,12 +172,59 @@
             </div>
         </section>
         <hr>
-        <section id="projects" class="nav-section">
+        <section id="projects" class="nav-section-projects">
             <div class="section-container-projects">
                 <div class="left-content-projects">
                     <h2 id="projects-header">Projects</h2>
                 </div>
-                <div class="left-content-projects">
+                <div class="right-content-projects">
+                    <div class="project-card">
+                        <div class="project-card-content">
+                            <img src="project1.jpeg" alt="Project 1 Image">
+                            <div class="project-description">
+                                <h3 class="project-name">Runaway Drone</h3>
+                                <p>Created software for a drone that scans objects while flying on the runway and detects its GPS location. Used Python, OpenCV, IMU.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-card-content">
+                            <img src="project2.jpeg" alt="Project 2 Image">
+                            <div class="project-description">
+                                <h3 class="project-name">Smart Pi Boat</h3>
+                                <p>Created a physical boat that can be controlled through an application. It has different motors that can be used separately or simultaneously. Used Raspberry Pi, Android Studio, Firebase.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-card-content">
+                            <img src="project3.jpg" alt="Project 3 Image">
+                            <div class="project-description">
+                                <h3 class="project-name">TRU Parking</h3>
+                                <p>Created a parking application for university to fix the problem of waiting in line for the parking machine. Used Android Studio, Google Maps API, Firebase.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-card-content">
+                            <img src="project4.jpg" alt="Project 4 Image">
+                            <div class="project-description">
+                                <h3 class="project-name">Chess Opening</h3>
+                                <p>Created a chess openings application. The main idea was to teach users different chess openings and test their knowledge at the end. Used Android Studio, Firebase.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+              
+        <hr>
+        <section id="reference" class="nav-section">
+            <div class="section-container-reference">
+                <div class="left-content-reference">
+                    <h2 id="reference-header">References</h2>
+                </div>
+                <div class="right-content-reference">
                     
                 </div>
             </div>
@@ -221,17 +268,24 @@
         // Sliding on scroll
         document.addEventListener("DOMContentLoaded", function() {
             const aboutSection = document.querySelector("#about");
-            const experienceSection = document.querySelector("#experience");
-            const skillsSection = document.querySelector("#skills");
-            const projectsSection = document.querySelector("#projects");
             const leftContentAbout = document.querySelector(".left-content-about");
             const rightContentAbout = document.querySelector(".right-content-about");
+
+            const experienceSection = document.querySelector("#experience");
             const leftContentExperience = document.querySelector(".left-content-experience");
             const rightContentExperience = document.querySelector(".right-content-experience");
+
+            const skillsSection = document.querySelector("#skills");
             const leftContentSkills = document.querySelector(".left-content-skills");
             const rightContentSkills = document.querySelector(".right-content-skills");
+
+            const projectsSection = document.querySelector("#projects");
             const leftContentProjects = document.querySelector(".left-content-projects");
             const rightContentProjects = document.querySelector(".right-content-projects");
+
+            const referenceSection = document.querySelector("#reference");
+            const leftContentReference = document.querySelector(".left-content-reference");
+            const rightContentReference = document.querySelector(".right-content-reference");
 
             let skillsAnimationStarted = false; // Flag to track if skills animation has started
 
@@ -266,6 +320,7 @@
             createObserver(experienceSection, leftContentExperience, rightContentExperience);
             createObserver(skillsSection, leftContentSkills, rightContentSkills, animateBars);
             createObserver(projectsSection, leftContentProjects, rightContentProjects);
+            createObserver(referenceSection, leftContentReference, rightContentReference);
 
             // Function to animate bars
             function animateBars() {
