@@ -1,10 +1,10 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #24201f;
-    color: #fff;
+    background: #24201f;
+    box-sizing: content-box;
+    font-family: monospace;
     margin: 0;
     padding: 0;
-}
+  }
 main {
     padding-top: 0px;
 }
@@ -19,36 +19,6 @@ hr {
     height: 3px; /* Adjust height as needed */
     margin: 0px 0; /* Adjust margin for spacing */
 }
-.navbar {
-    position: -webkit-sticky; /* For Safari */
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    background-color: #333;
-    width: 100%;
-    padding: 10px 0;
-}
-.nav-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: space-around;
-}
-.nav-links a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 20px;
-}
-.nav-links a:hover {
-    background-color: #555;
-    color: #fff;
-}
-.nav-section {
-    position: relative;
-    height: 600px;
-    padding: 20px;
-}
 .divider {
     border: 0;
     height: 3px; /* Adjust height as needed */
@@ -61,8 +31,9 @@ hr {
     z-index: 1;
     border-top: 3px dashed #c3c3c3; /* Make the border dashed with white color */
 }
+
 /* HOME SECTION */
-.section-container {
+.section-container .home {
     display: flex;
     justify-content: space-between; /* Distribute space evenly */
     height: 100%;
@@ -646,59 +617,91 @@ hr {
     transform: translateX(0);
 }
 
-/* NAVIGATIONAL BAR */
-.navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    width: 800px;
-    height: 60px; /* Set a consistent height for the navbar */
-    margin: 0 auto; /* Center the navbar */
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    background-color: #24201f;
-    color: #fff;
-    border-radius: 50px; /* Make the corners rounded */
-    border: 2px solid #fff;
-    font-family: monospace;
-    font-size: 15px;
-}
-.nav-links {
-    display: flex;
-    width: 100%; /* Ensure the nav-links container takes up full width */
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
+/* NAVIGATIONAL BAR V2*/
 .menu {
+    position: fixed;
+    height: 100vh;
+    background: #24201f;
+    width: 10vw;
+    transition: 1s;
+    overflow: hidden; /* Ensures the pseudo-elements don't overflow */
+}
+.menu .line {
+    content: '';
+    display: block;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    width: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: transform 0.3s ease;
+}
+.menu .line:nth-child(1) {
+    top:5%;
+}
+.menu .line:nth-child(2) {
+    top:7%;
+}
+.menu .line:nth-child(3) {
+    top:9%;
+}
+.menu:hover {
+    width: 25vw;
+    background: #3d3e40;
+}
+.menu:hover ~ .nav-section {
+    transform: translateX(15vw);
+}
+.menu:hover nav {
+    left: 20%;
+}
+.nav-section {
+    width: 85%;
+    margin-left: 10vw;
+    background: #24201f;
+    transition: 1s;
+    transform-origin: left center;
+    color: #D2D2D0;
+    border: 1px solid #fff;
+}
+.nav-section .section-container {
     display: flex;
-    width: 100%; /* Ensure the menu takes up full width */
-    list-style: none;
-    padding: 0;
-    margin: 0; /* Remove default margins */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 28vh;
+    padding-left: 10%;
+    height: 70vh;
 }
-.menu li {
-    flex: 1; /* Ensure all menu items take up equal space */
-    height: 100%; /* Match the height of the navbar */
+.container .section-container:first-child {
+    display: block;
 }
-.menu li a {
-    color: #fff;
+nav {
+    position: absolute;
+    margin-top: 80%;
+    left: -1000px;
+    transition: .5s;
+}
+nav ul {
+    color: white;
+    text-transform: uppercase;
+    list-style-type: none;
+    padding-left: 0;
+}
+nav li {
+    line-height: 2em;
+    letter-spacing: .3em;
+    margin-bottom: 10px; /* Add margin between each nav link */
+}
+nav a {
+    font-size: 30px;
     text-decoration: none;
-    display: flex; /* Use flexbox for centering text */
-    align-items: center; /* Vertically center text */
-    justify-content: center; /* Horizontally center text */
-    height: 100%; /* Ensure link takes up full height of li */
-    width: 100%; /* Ensure link takes up full width of li */
-    padding: 0; /* Remove padding */
-    margin: 0; /* Remove margin */
-    box-sizing: border-box; /* Include padding and border in total width and height */
+    color: white;
+    font-weight: 600;
 }
-.menu li a:hover {
-    background-color: #454241;
-    border-radius: 50px; /* Match the border radius of the navbar */
-    transition: background-color 0.5s ease;
+nav a:hover {
+    color: #8a8d91; /* Change color on hover */
+    font-size: 32px; /* Increase font size on hover */
 }
-
+  

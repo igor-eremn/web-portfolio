@@ -8,27 +8,7 @@
 </head>
 <body id="body">
 
-    <section id="home" class="nav-section">
-        <div class="section-container">
-            <div id="home-content">
-                <div id="name-container">
-                    <h2 id="home-name">Igor Eremin</h2>
-                </div>
-                <div id="links-container">
-                    <div id="links">
-                        <a href="https://drive.google.com/uc?export=download&id=1R37S3oWdsPmBMl1FV6WadCRjKZkwJ9y6" download="Resume.pdf">Resume</a>
-                        <a href="https://www.linkedin.com/in/igoeremin/" target="_blank">LinkedIn</a>
-                        <a href="https://github.com/success-412" target="_blank">GitHub</a>
-                    </div>
-                </div>
-            </div>
-            <div class="image-container">
-                <img id="photo" src="img4.jpg" alt="Image 4">
-            </div>
-        </div>
-        <hr class="divider">
-    </section>        
-    <hr>
+    <!-- Nav Bar V1
     <nav id="navbar" class="navbar">
         <ul class="nav-links">
             <div class="menu">
@@ -41,10 +21,48 @@
             </div>
         </ul>
     </nav>
+    -->
 
     <main>
-        <hr>
-        <section id="about" class="nav-section">
+        <div class="menu">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <nav>
+                <ul>
+                    <li><a href="#" data-section="home">Home</a></li>
+                    <li><a href="#" data-section="about">About Me</a></li>
+                    <li><a href="#" data-section="skills">Skills</a></li>
+                    <li><a href="#" data-section="experience">Experience</a></li>
+                    <li><a href="#" data-section="projects">Projects</a></li>
+                    <li><a href="#" data-section="reference">References</a></li>
+                 </ul>
+            </nav>
+        </div>
+
+        <section class="nav-section">
+            <div class="section-container" id="home">
+                <div id="home-content">
+                    <div id="name-container">
+                        <h2 id="home-name">Igor Eremin</h2>
+                    </div>
+                    <div id="links-container">
+                        <div id="links">
+                            <a href="https://drive.google.com/uc?export=download&id=1R37S3oWdsPmBMl1FV6WadCRjKZkwJ9y6" download="Resume.pdf">Resume</a>
+                            <a href="https://www.linkedin.com/in/igoeremin/" target="_blank">LinkedIn</a>
+                            <a href="https://github.com/success-412" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!--<hr class="divider">-->
+                <div class="image-container">
+                    <img id="photo" src="img4.jpg" alt="Image 4">
+                </div>
+            </div>
+
+
+        </section>     
+        <!--<section id="about" class="nav-section">
             <div class="section-container-about">
                 <div class="left-content-about">
                     <h2 id="about-header">About Me</h2>
@@ -288,108 +306,9 @@
                 </div>
             </div>
         </section>
-        <hr>
+        <hr>-->
     </main>
-
-    <footer>
-        <p>&copy; 2024 Your Website. All rights reserved.</p>
-    </footer>
     
-    <script>
-        //links of navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                const targetId = this.getAttribute('href').substring(1);
-                const targetElement = document.getElementById(targetId);
-                const navbarHeight = document.getElementById('navbar').offsetHeight + 23;
-
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - navbarHeight, // Subtract navbar height
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        //scrolling to top of the screen on reload
-        document.addEventListener('DOMContentLoaded', function() {
-            const targetElement = document.getElementById("head");
-            const nav_bar = document.getElementById("navbar");
-            window.scrollTo({
-                        top: targetElement,
-                        behavior: 'smooth'
-                    });
-        }, false);
-
-        // Sliding on scroll
-        document.addEventListener("DOMContentLoaded", function() {
-            const aboutSection = document.querySelector("#about");
-            const leftContentAbout = document.querySelector(".left-content-about");
-            const rightContentAbout = document.querySelector(".right-content-about");
-
-            const experienceSection = document.querySelector("#experience");
-            const leftContentExperience = document.querySelector(".left-content-experience");
-            const rightContentExperience = document.querySelector(".right-content-experience");
-
-            const skillsSection = document.querySelector("#skills");
-            const leftContentSkills = document.querySelector(".left-content-skills");
-            const rightContentSkills = document.querySelector(".right-content-skills");
-
-            const projectsSection = document.querySelector("#projects");
-            const leftContentProjects = document.querySelector(".left-content-projects");
-            const rightContentProjects = document.querySelector(".right-content-projects");
-
-            const referenceSection = document.querySelector("#reference");
-            const leftContentReference = document.querySelector(".left-content-reference");
-            const rightContentReference = document.querySelector(".right-content-reference");
-
-            let skillsAnimationStarted = false; // Flag to track if skills animation has started
-
-            function createObserver(section, leftContent, rightContent, animationCallback) {
-                const observerOptions = {
-                    root: null,
-                    rootMargin: '0px',
-                    threshold: 0.5
-                };
-
-                const observer = new IntersectionObserver((entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            leftContent.classList.add("slide-in");
-                            rightContent.classList.add("slide-in");
-                            observer.unobserve(entry.target);
-
-                            // Call the animation callback if provided and not already started
-                            if (animationCallback && !skillsAnimationStarted) {
-                                animationCallback();
-                                skillsAnimationStarted = true; // Set flag to true once animation starts
-                            }
-                        }
-                    });
-                }, observerOptions);
-
-                observer.observe(section);
-            }
-
-            // Use the createObserver function for each section
-            createObserver(aboutSection, leftContentAbout, rightContentAbout);
-            createObserver(experienceSection, leftContentExperience, rightContentExperience);
-            createObserver(skillsSection, leftContentSkills, rightContentSkills, animateBars);
-            createObserver(projectsSection, leftContentProjects, rightContentProjects);
-            createObserver(referenceSection, leftContentReference, rightContentReference);
-
-            // Function to animate bars
-            function animateBars() {
-                const progressBars = document.querySelectorAll(".progress-bar");
-                progressBars.forEach(bar => {
-                    bar.style.animationPlayState = 'running';
-                });
-            }
-        });
-
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
