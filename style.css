@@ -14,77 +14,39 @@ h1 {
 p {
     font-size: 1.2em;
 }
-hr {
-    border: 0;
-    height: 3px; /* Adjust height as needed */
-    margin: 0px 0; /* Adjust margin for spacing */
-}
-.divider {
-    border: 0;
-    height: 3px; /* Adjust height as needed */
-    background-color: transparent; /* Set background color to transparent */
-    margin: 0; /* Adjust margin for spacing */
-    position: absolute;
-    width: 100%; /* Make it span the full width of the page */
-    top: 50%; /* Position it in the middle of the screen */
-    left: 0;
-    z-index: 1;
-    border-top: 3px dashed #c3c3c3; /* Make the border dashed with white color */
-}
 
 /* HOME SECTION */
-.section-container .home {
+.section-container#home {
     display: flex;
-    justify-content: space-between; /* Distribute space evenly */
-    height: 100%;
-    align-items: center; /* Center align items vertically */
-    position: relative;
-    z-index: 2; /* Make sure it is above the divider */
-}
-.image-container {
-    display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    height: 100%;
-    position: relative;
-    z-index: 3; /* Ensure the image is above the divider */
-    width: 60%;
-}
-.image-container img {
-    border-radius: 50%;
-    width: 400px; /* Adjust size as needed */
-    height: 400px; /* Adjust size as needed */
-    object-fit: cover;
-    border: 3px dashed #fff;
+    padding-top: 10vh; /* Move the content up by 10% of the viewport height */
+    font-family: monospace;
 }
 #home-content {
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    height: 100%;
-    position: relative;
-    z-index: 3; /* Ensure the content is above the divider */
-    width: 40%;
+    justify-content: center;
+    align-items: center;
+    width: 80%; /* Adjust width as needed */
+    margin-left: -15%; /* Move the content slightly to the left */
+}
+#name-links-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end; /* Align content to the right */
+    margin-right: 40px; /* Space between name-links and image */
 }
 #name-container, #links-container {
     display: flex;
     justify-content: center;
-    height: 50%;
-    z-index: 3;
-    align-self: flex-end;
-}
-#name-container {
-    padding-right: 40px;
-    align-items: end;
-}
-#links-container {
-    padding-right: 30px;
-    align-items: start;
+    align-items: center;
+    margin: 10px 0; /* Add margin to separate name and links */
 }
 #home-name {
     color: #fff;
     font-size: 2.3em;
     font-family: monospace;
-    margin-bottom: 10px; /* Add margin to control distance from bottom */
 }
 #links {
     display: flex;
@@ -101,90 +63,81 @@ hr {
 #links a:hover {
     text-decoration: underline;
 }
-
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.image-container img {
+    border-radius: 50%;
+    width: 400px; /* Return size to original dimensions */
+    height: 400px; /* Return size to original dimensions */
+    object-fit: cover;
+    border: 3px dashed #fff;
+}
 
 /* ABOUT SECTION */
-.section-container-about {
+.section-container#about {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    gap: 10px;
-    height: 100%;
-    overflow: hidden; /* Ensure hidden overflow for sliding effect */
-    /*border: 1px solid #fff;*/
+    padding-top: 10vh; /* Move the content up by 10% of the viewport height */
+    flex-direction: column; /* Arrange title and text blocks vertically */
 }
+
 .left-content-about, .right-content-about {
     padding: 20px;
     border-radius: 10px;
-    display: flex; /* Added display flex to center content */
-    align-items: center;
-    justify-content: center;
-    opacity: 0; /* Initially hidden */
-    transform: translateX(-100%); /* Start off-screen to the left */
-    transition: transform 1s ease, opacity 1s ease;
-}
-.right-content-about {
-    transform: translateX(100%); /* Start off-screen to the right */
+    margin-left: -15%;
 }
 .left-content-about {
-    margin-left: 5%;
-    height: 50%;
-    width: 20%;
     display: flex; /* Ensure flexbox is applied */
     align-items: center; /* Vertically center content */
-    justify-content: flex-end; /* Align content to the right */
+    justify-content: center; /* Center content horizontally */
     font-family: monospace;
     font-size: 2em;
+    width: 100%; /* Make the container take the full width */
+    text-align: center; /* Center text within the container */
 }
-.right-content-about{
-    margin-right: 5%;
+.right-content-about {
     height: auto; /* Remove fixed height to allow content to adjust dynamically */
-    width: 80%;
+    width: 80%; /* Adjust width as needed */
     display: flex;
     flex-direction: column; /* Arrange text blocks vertically */
-    justify-content: space-evenly; /* Ensure even spacing */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    text-align: center; /* Center text within paragraphs */
 }
 .right-content-about p {
     font-size: 1.4em;
     font-family: monospace;
+    margin-bottom: 20px; /* Add margin to separate paragraphs */
 }
-
 /* SKILLS */
-.section-container-skills {
+.section-container#skills {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    gap: 10px;
-    height: 100%;
-    overflow: hidden; /* Ensure hidden overflow for sliding effect */
-    /*border: 1px solid #fff; /*border*/
+    padding-top: 11vh; /* Adjust padding-top to move the content higher */
+    flex-direction: column; /* Arrange title and text blocks vertically */
 }
 .left-content-skills, .right-content-skills {
     padding: 20px;
     border-radius: 10px;
-    display: flex; /* Added display flex to center content */
-    align-items: center;
-    justify-content: center;
-    opacity: 0; /* Initially hidden */
-    transform: translateX(-100%); /* Start off-screen to the left */
-    transition: transform 1s ease, opacity 1s ease;
-    /*border: 1px solid #fff;*/
-}
-.left-content-skills {
-    margin-left: 5%;
-    height: 50%;
-    width: 20%;
     display: flex; /* Ensure flexbox is applied */
     align-items: center; /* Vertically center content */
-    justify-content: flex-end; /* Align content to the right */
+    justify-content: center; /* Center content horizontally */
+    margin-left: -15%;
+}
+.left-content-skills {
+    width: 20%; /* Adjust width as needed */
     font-family: monospace;
     font-size: 2em;
+    text-align: center; /* Center text within the container */
 }
 .right-content-skills {
-    transform: translateX(100%); /* Start off-screen to the right */
-    margin-right: 5%;
     height: 80%;
-    width: 80%;
+    width: 80%; /* Adjust width as needed */
     display: flex;
     justify-content: space-evenly; /* Ensure even spacing */
     gap: 20px; /* Gap between columns */
@@ -611,12 +564,6 @@ hr {
     transform: translateX(50px) translateY(-50%);
 }
 
-/* Animation classes */
-.slide-in {
-    opacity: 1;
-    transform: translateX(0);
-}
-
 /* NAVIGATIONAL BAR V2*/
 .menu {
     position: fixed;
@@ -625,6 +572,7 @@ hr {
     width: 10vw;
     transition: 1s;
     overflow: hidden; /* Ensures the pseudo-elements don't overflow */
+    font-family: monospace;
 }
 .menu .line {
     content: '';
@@ -663,10 +611,9 @@ hr {
     transition: 1s;
     transform-origin: left center;
     color: #D2D2D0;
-    border: 1px solid #fff;
 }
 .nav-section .section-container {
-    display: flex;
+    display: block;
     flex-direction: column;
     justify-content: center;
     align-items: center;

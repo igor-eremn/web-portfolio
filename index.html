@@ -7,22 +7,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body id="body">
-
-    <!-- Nav Bar V1
-    <nav id="navbar" class="navbar">
-        <ul class="nav-links">
-            <div class="menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#reference">References</a></li>
-            </div>
-        </ul>
-    </nav>
-    -->
-
     <main>
         <div class="menu">
             <div class="line"></div>
@@ -43,27 +27,25 @@
         <section class="nav-section">
             <div class="section-container" id="home">
                 <div id="home-content">
-                    <div id="name-container">
-                        <h2 id="home-name">Igor Eremin</h2>
-                    </div>
-                    <div id="links-container">
-                        <div id="links">
-                            <a href="https://drive.google.com/uc?export=download&id=1R37S3oWdsPmBMl1FV6WadCRjKZkwJ9y6" download="Resume.pdf">Resume</a>
-                            <a href="https://www.linkedin.com/in/igoeremin/" target="_blank">LinkedIn</a>
-                            <a href="https://github.com/success-412" target="_blank">GitHub</a>
+                    <div id="name-links-container">
+                        <div id="name-container">
+                            <h2 id="home-name">Igor Eremin</h2>
+                        </div>
+                        <div id="links-container">
+                            <div id="links">
+                                <a href="https://drive.google.com/uc?export=download&id=1R37S3oWdsPmBMl1FV6WadCRjKZkwJ9y6" download="Resume.pdf">Resume</a>
+                                <a href="https://www.linkedin.com/in/igoeremin/" target="_blank">LinkedIn</a>
+                                <a href="https://github.com/success-412" target="_blank">GitHub</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!--<hr class="divider">-->
-                <div class="image-container">
-                    <img id="photo" src="img4.jpg" alt="Image 4">
+                    <div class="image-container">
+                        <img id="photo" src="img4.jpg" alt="Image 4">
+                    </div>
                 </div>
             </div>
 
-
-        </section>     
-        <!--<section id="about" class="nav-section">
-            <div class="section-container-about">
+            <div class="section-container" id="about" style="display:none;">
                 <div class="left-content-about">
                     <h2 id="about-header">About Me</h2>
                 </div>
@@ -84,7 +66,105 @@
                             amazing together!</p>
                 </div>
             </div>
-        </section>
+
+            <div class="section-container" id="skills" style="display:none;">
+                <div class="left-content-skills">
+                    <h2 id="skills-header">Skills</h2>
+                </div>
+                <div class="right-content-skills">
+                    <div class="skills-column">
+                        <div class="skill">
+                            <div class="skill-name">JavaScript</div>
+                            <div class="progress progress-moved">
+                                <div class="progress-bar" id="bar1"></div>                       
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">HTML</div>
+                            <div class="progress progress-moved">
+                                <div class="progress-bar" id="bar3"></div>                       
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">CSS</div>
+                            <div class="progress progress-moved">
+                                <div class="progress-bar" id="bar4"></div>                       
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">Java</div>
+                            <div class="progress progress-moved">
+                                <div class="progress-bar" id="bar2"></div>                       
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">C#</div>
+                            <div class="progress progress-moved">
+                                <div class="progress-bar" id="bar5"></div>                       
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">Java</div>
+                            <div class="progress progress-moved">
+                                <div class="progress-bar" id="bar2"></div>                       
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">C#</div>
+                            <div class="progress progress-moved">
+                                <div class="progress-bar" id="bar5"></div>                       
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skills-column">
+                        <div class="skill">
+                            <div class="skill-name">SQL</div>
+                            <div class="progress progress-moved">
+                                <div class="progress-bar" id="bar6"></div>                       
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">Python</div>
+                            <div class="progress progress-moved">
+                                <div class="progress-bar" id="bar9"></div>                       
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">MongoDB</div>
+                            <div class="progress progress-moved">
+                                <div class="progress-bar" id="bar7"></div>                       
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">PHP</div>
+                            <div class="progress progress-moved">
+                                <div class="progress-bar" id="bar8"></div>                       
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">C</div>
+                            <div class="progress progress-moved">
+                                <div class="progress-bar" id="bar10"></div>                       
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">PHP</div>
+                            <div class="progress progress-moved">
+                                <div class="progress-bar" id="bar8"></div>                       
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">C</div>
+                            <div class="progress progress-moved">
+                                <div class="progress-bar" id="bar10"></div>                       
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>     
+        <!--
         <hr>
         <section id="skills" class="nav-section">
             <div class="section-container-skills">
