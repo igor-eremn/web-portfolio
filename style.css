@@ -98,6 +98,7 @@ p {
     font-size: 2em;
     width: 100%; /* Make the container take the full width */
     text-align: center; /* Center text within the container */
+    margin-left: -5%;
 }
 .right-content-about {
     height: auto; /* Remove fixed height to allow content to adjust dynamically */
